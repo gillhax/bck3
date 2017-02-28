@@ -1,0 +1,41 @@
+<div>
+    <h2><span data-translate="quizApp.offer.detail.title">Предложение этнических традиций</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+            <span>{{vm.offer.id}}</span>
+        </dd>
+        <dt><span data-translate="quizApp.offer.date">Дата</span></dt>
+        <dd>
+            <span>{{vm.offer.date |  date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="quizApp.offer.user">Пользователь</span></dt>
+        <dd>
+            <span><a ui-sref="player-detail({id:vm.offer.user.id})">{{vm.offer.user.login}}</a></span>
+        </dd>
+        <dt><span data-translate="quizApp.offer.text">Описание</span></dt>
+        <dd>
+            <span>{{vm.offer.text}}</span>
+        </dd>
+
+        <span ng-if="vm.offer.withAttaches">
+            <dt><span data-translate="quizApp.offer.attaches">Вложения</span></dt>
+            <dd ng-repeat="attach in vm.offer.attaches">
+               <span>
+                   <a target="_blank" href="{{attach.path}}">
+                   <img src="{{attach.path}}" style="max-width:100%"/>
+                   </a>
+               </span>
+                <br><br>
+            </dd>
+        </span>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+</div>

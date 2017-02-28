@@ -1,0 +1,24 @@
+{
+    "quizApp": {
+        "player" : {
+            "home": {
+                "title": "Players",
+                "createLabel": "Создать новый Player",
+                "createOrEditLabel": "Создать или отредактировать Player",
+                "search": "Найти Player"
+            },
+            "created": "Новый Player создан с идентификатором {{ param }}",
+            "updated": "Player обновлен с идентификатором {{ param }}",
+            "deleted": "Player удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Player {{ id }}?"
+            },
+            "detail": {
+                "title": "Player"
+            },
+            "name": "Name",
+            "score": "Score",
+            "avatar": "Avatar"
+        }
+    }
+}

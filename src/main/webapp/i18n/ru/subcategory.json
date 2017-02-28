@@ -1,0 +1,23 @@
+{
+    "quizApp": {
+        "subcategory": {
+            "home": {
+                "title": "Subcategories",
+                "createLabel": "Создать новый Subcategory",
+                "createOrEditLabel": "Создать или отредактировать Subcategory",
+                "search": "Найти Subcategory"
+            },
+            "created": "Новый Subcategory создан с идентификатором {{ param }}",
+            "updated": "Subcategory обновлен с идентификатором {{ param }}",
+            "deleted": "Subcategory удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Subcategory {{ id }}?"
+            },
+            "detail": {
+                "title": "Subcategory"
+            },
+            "name": "Name",
+            "category": "Category"
+        }
+    }
+}

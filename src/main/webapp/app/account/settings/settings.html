@@ -1,0 +1,31 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Загрузка вопросов</h2>
+
+            <div class="alert alert-success" ng-show="vm.success">
+                <strong>Вопросы загружены!</strong>
+            </div>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <form name="form" role="form"  novalidate show-validation acceptcharset="UTF-8"
+                  enctype="multipart/form-data" action="/api/v1/parser/upload" method="post">
+                <div class="form-group">
+                    <label class="control-label" for="files">Выберите файлы:</label>
+                    <input class="form-control" name="files" id="files" type="file" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary">Загрузить</button>
+            </form>
+
+            <upload-button class="btn btn-primary btn-upload"
+
+                 url="/api/v1/parser/upload"
+                           data="files"
+                 param="files"
+                 multiple="true">
+                Fileupload</upload-button>
+        </div>
+    </div>
+
+</div>

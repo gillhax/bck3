@@ -1,0 +1,6 @@
+id;login;password_hash;activated;lang_key;created_by;last_modified_by
+1;admin;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;true;ru;system;system
+2;user;$2a$10$zFidu4DN6GXAImLbgIgE9u8TS9x0Wmh6PFaIYOFk81jqDD7XXkTKO;true;ru;system;system
+3;test@t.t;$2a$10$Up5y51MG38XHZGPAs/Jh2.B2daGUcJS/OpvCKt5EfGSztrmxg0xBG;true;ru;system;system
+4;useruser@gmail.com;$2a$10$mnvc09vItDwBxC2YaksSwOMZtRjHhhcb15R1qeHsX20XBRPbyjsSa;true;ru;system;system
+5;panton295@gmail.com;$2a$10$24gqXiErXP6COr6KjvDFX.nZa62VEWz.AgtVto7ksgwNorXOx0C92;true;ru;system;system

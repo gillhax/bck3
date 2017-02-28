@@ -1,0 +1,57 @@
+<div>
+    <h2 data-translate="quizApp.offer.home.title">Предложения этнических традиций</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="date"><span data-translate="quizApp.offer.date">Дата</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="text"><span data-translate="quizApp.offer.text">Описание</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="offer in vm.offers track by offer.id">
+                <td style="width: 60px"><a ui-sref="offer-detail({id:offer.id})">{{offer.id}}</a></td>
+                <td style="width: 140px">{{offer.date | date:'medium'}}</td>
+                <td style="width:60%;">{{offer.text.length > 100 ? offer.text.substring(0,100)+'...': offer.text}}</td>
+                <td>
+                    <span ng-if="offer.withAttaches" class="glyphicon glyphicon-file"></span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="offer-detail({id:offer.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="offer.delete({id:offer.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage"
+                        ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

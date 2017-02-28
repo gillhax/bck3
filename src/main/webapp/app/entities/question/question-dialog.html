@@ -1,0 +1,198 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQuestionLabel" data-translate="quizApp.question.home.createOrEditLabel">Create or edit a Question</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.question.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.question.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.title" for="field_title">Вопрос</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.question.title"
+                    required ng-minlength="1" ng-maxlength="512" />
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.title.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.title.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="512">
+                    This field cannot be longer than 512 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.mediaType" for="field_mediaType">Тип
+                данных</label>
+            <input type="text" class="form-control" name="mediaType" id="field_mediaType"
+                   ng-model="vm.question.mediaType"
+                   ng-minlength="0" ng-maxlength="20"/>
+            <div ng-show="editForm.mediaType.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.mediaType.$error.minlength" data-translate="entity.validation.minlength"
+                   translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.mediaType.$error.maxlength" data-translate="entity.validation.maxlength"
+                   translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.media" for="field_media">Данные</label>
+            <input type="text" class="form-control" name="media" id="field_media"
+                    ng-model="vm.question.media"
+                    ng-minlength="0" ng-maxlength="512" />
+            <div ng-show="editForm.media.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.media.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.media.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="512">
+                    This field cannot be longer than 512 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.answer1" for="field_answer1">Ответ 1</label>
+            <input type="text" class="form-control" name="answer1" id="field_answer1"
+                   ng-model="vm.question.answer1"
+                   required ng-minlength="1" ng-maxlength="64"/>
+            <div ng-show="editForm.answer1.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.answer1.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer1.$error.minlength" data-translate="entity.validation.minlength"
+                   translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer1.$error.maxlength" data-translate="entity.validation.maxlength"
+                   translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.answer2" for="field_answer2">Ответ 2</label>
+            <input type="text" class="form-control" name="answer2" id="field_answer2"
+                   ng-model="vm.question.answer2"
+                   required ng-minlength="1" ng-maxlength="64"/>
+            <div ng-show="editForm.answer2.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.answer2.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer2.$error.minlength" data-translate="entity.validation.minlength"
+                   translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer2.$error.maxlength" data-translate="entity.validation.maxlength"
+                   translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.answer3" for="field_answer3">Ответ 3</label>
+            <input type="text" class="form-control" name="answer3" id="field_answer3"
+                   ng-model="vm.question.answer3"
+                   required ng-minlength="1" ng-maxlength="64"/>
+            <div ng-show="editForm.answer3.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.answer3.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer3.$error.minlength" data-translate="entity.validation.minlength"
+                   translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer3.$error.maxlength" data-translate="entity.validation.maxlength"
+                   translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.answer4" for="field_answer4">Ответ 4</label>
+            <input type="text" class="form-control" name="answer4" id="field_answer4"
+                   ng-model="vm.question.answer4"
+                   required ng-minlength="1" ng-maxlength="64"/>
+            <div ng-show="editForm.answer4.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.answer4.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer4.$error.minlength" data-translate="entity.validation.minlength"
+                   translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.answer4.$error.maxlength" data-translate="entity.validation.maxlength"
+                   translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="quizApp.question.rightAnswer" for="field_rightAnswer">Правильный
+                ответ</label>
+            <input type="number" class="form-control" name="rightAnswer" id="field_rightAnswer"
+                   ng-model="vm.question.rightAnswer"
+                   required/>
+            <div ng-show="editForm.rightAnswer.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.rightAnswer.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.rightAnswer.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="quizApp.question.category" for="field_category">Категория</label>
+            <select class="form-control" id="field_category" name="category" ng-model="vm.question.category" ng-options="category as category.name for category in vm.categories track by category.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.category.$invalid">
+            <p class="help-block"
+                ng-show="editForm.category.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
